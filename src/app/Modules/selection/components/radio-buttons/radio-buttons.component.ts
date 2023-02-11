@@ -8,6 +8,7 @@ import { ISelectableOption } from '../../models/ISelectable';
   styleUrls: ['./radio-buttons.component.less'],
 })
 export class RadioButtonsComponent<T> {
+  // <T> is a generic type
   @Input() options: ISelectableOption<T>[] = [];
   @Input() selectedOption: T | undefined = undefined;
   @Input() isMultiSelectable: boolean | undefined = undefined;
