@@ -1,0 +1,29 @@
+<div>
+  <span>Your options</span>
+  <div *ngIf="options.length > 0">
+    <div *ngIf="!isMultiSelectable">
+      <div *ngFor="let option of options">
+        <input
+          type="radio"
+          name="options"
+          [value]="option.value"
+          [(ngModel)]="selectedOption"
+          (change)="onSelectedChange()"
+        />
+        <span [innerText]="option.title"></span>
+      </div>
+    </div>
+    <div *ngIf="isMultiSelectable">
+      <div *ngFor="let option of options">
+        <input
+          type="checkbox"
+          name="options"
+          [value]="option.value"
+          [(ngModel)]="option.isSelected"
+          (change)="onMultiSelectedChange()"
+        />
+        <span [innerText]="option.title"></span>
+      </div>
+    </div>
+  </div>
+</div>
